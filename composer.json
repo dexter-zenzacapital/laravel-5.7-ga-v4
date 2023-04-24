@@ -18,7 +18,7 @@
             "name": "Dexter Nunag",
             "email": "dexter@zenzacapital.com",
             "role": "Developer"
-        },
+        }
     ],
     "require": {
         "php": "^7.1.3",
