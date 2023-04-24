@@ -2,25 +2,27 @@
 
 namespace Vormkracht10\Analytics;
 
-use Spatie\LaravelPackageTools\Commands\InstallCommand;
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Illuminate\Support\ServiceProvider;
+use Vormkracht10\Analytics\Commands\InstallCommand;
 
-class AnalyticsServiceProvider extends PackageServiceProvider
+class AnalyticsServiceProvider extends ServiceProvider
 {
-    public function configurePackage(Package $package): void
+    public function boot()
     {
-        $package
-            ->name('laravel-5.7-ga-v4')
-            ->hasConfigFile();
+        $this->publishes([
+            __DIR__.'/../config/google-analytics.php' => config_path('analytics.php'),
+        ], 'config');
 
-        if (app()->runningUnitTests()) {
+        if ($this->app->runningUnitTests()) {
             return;
         }
+    }
 
-        $package->hasInstallCommand(function (InstallCommand $command) {
-            $command->publishConfigFile()
-                ->askToStarRepoOnGitHub('dexter-zenzacapital/laravel-5.7-ga-v4');
-        });
+    public function register()
+    {
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/google-analytics.php',
+            'analytics'
+        );
     }
 }
