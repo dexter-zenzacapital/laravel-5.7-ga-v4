@@ -11,7 +11,7 @@ class AnalyticsServiceProvider extends PackageServiceProvider
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('laravel-google-analytics')
+            ->name('laravel-5.7-ga-v4')
             ->hasConfigFile();
 
         if (app()->runningUnitTests()) {
