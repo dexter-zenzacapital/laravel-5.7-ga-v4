@@ -3,7 +3,6 @@
 namespace Vormkracht10\Analytics;
 
 use Illuminate\Support\ServiceProvider;
-use Vormkracht10\Analytics\Commands\InstallCommand;
 
 class AnalyticsServiceProvider extends ServiceProvider
 {
