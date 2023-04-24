@@ -1,10 +1,11 @@
 {
-    "name": "vormkracht10/laravel-google-analytics-v4",
+    "name": "dexter-zenzacapital/laravel-5.7-ga-v4",
     "description": "Laravel package to get insights in Google Analytics v4 data",
     "keywords": [
-        "vormkracht10",
+        "google-analytics-v4",
+        "laravel-5.7",
         "laravel",
-        "laravel-google-analytics-v4"
+        "laravel-5.7-ga-v4"
     ],
     "homepage": "https://github.com/vormkracht10/laravel-google-analytics-v4",
     "license": "MIT",
