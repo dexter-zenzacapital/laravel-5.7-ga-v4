@@ -20,7 +20,7 @@ class AnalyticsServiceProvider extends PackageServiceProvider
 
         $package->hasInstallCommand(function (InstallCommand $command) {
             $command->publishConfigFile()
-                ->askToStarRepoOnGitHub('vormkracht10/laravel-google-analytics');
+                ->askToStarRepoOnGitHub('dexter-zenzacapital/laravel-5.7-ga-v4');
         });
     }
 }
