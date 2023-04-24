@@ -13,12 +13,17 @@
             "name": "Bas van Dinther",
             "email": "bas@vormkracht10.nl",
             "role": "Developer"
-        }
+        },
+        {
+            "name": "Dexter Nunag",
+            "email": "dexter@zenzacapital.com",
+            "role": "Developer"
+        },
     ],
     "require": {
-        "php": "^8.1",
+        "php": "^7.1.3",
         "google/analytics-data": "^0.9.4",
-        "illuminate/contracts": "^9.0|^10.0",
+        "illuminate/contracts": "^5.7|^6.0",
         "spatie/laravel-package-tools": "^1.14.0"
     },
     "require-dev": {
@@ -37,13 +42,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Vormkracht10\\Analytics\\": "src",
-            "Vormkracht10\\Analytics\\Database\\Factories\\": "database/factories"
+            "Vormkracht10\\Analytics\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Vormkracht10\\Analytics\\Tests\\": "tests"
+            "Vormkracht10\\Analytics\\Tests\\": "tests/"
         }
     },
     "scripts": {
