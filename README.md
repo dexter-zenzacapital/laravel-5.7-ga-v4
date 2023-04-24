@@ -14,7 +14,7 @@ Retrieve all data like pageviews, events, ecommerce transactions and more from G
 You can install the package via composer:
 
 ```bash
-composer require vormkracht10/laravel-google-analytics
+composer require dexter-zenzacapital/laravel-5.7-ga-v4
 ```
 
 You can publish the config file with:
