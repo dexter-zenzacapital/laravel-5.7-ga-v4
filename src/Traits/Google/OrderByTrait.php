@@ -13,14 +13,14 @@ trait OrderByTrait
 
     public function orderByDimension($name, $direction = Direction::ASC)
     {
-        $dimension = new DimensionOrderBy([
-            'dimension_name' => $name,
-        ]);
+        $dimension = (new DimensionOrderBy())->setDimensionName($name);
+
+
 
         $this->orderBys = [
-            (new OrderBy([
-                'dimension' => $dimension,
-            ]))->setDesc(Direction::DESC->value === $direction->value),
+            (new OrderBy())->setDimension(
+                $dimension,
+            )->setDesc(Direction::DESC->value === $direction->value),
         ];
 
         return $this;
@@ -28,14 +28,12 @@ trait OrderByTrait
 
     public function orderByMetric($name, $direction = Direction::ASC)
     {
-        $metric = new MetricOrderBy([
-            'metric_name' => $name,
-        ]);
+        $metric = (new MetricOrderBy())->setMetricName($name);
 
         $this->orderBys = [
-            (new OrderBy([
-                'metric' => $metric,
-            ]))->setDesc(Direction::DESC->value === $direction->value),
+            (new GoogleOrderBy())->setMetric(
+                $metric,
+            )->setDesc(Direction::DESC->value === $direction->value),
         ];
 
         return $this;
