@@ -6,9 +6,9 @@ use Google\Analytics\Data\V1beta\Dimension;
 
 trait DimensionTrait
 {
-    public array $dimensions = [];
+    public $dimensions = [];
 
-    public function addDimension(string $name): self
+    public function addDimension($name)
     {
         $this->dimensions[] = new Dimension([
             'name' => $name,
@@ -17,7 +17,7 @@ trait DimensionTrait
         return $this;
     }
 
-    public function addDimensions(string ...$dimensions): self
+    public function addDimensions(...$dimensions)
     {
         foreach ($dimensions as $dimension) {
             $this->addDimension($dimension);

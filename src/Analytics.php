@@ -24,11 +24,11 @@ class Analytics
         ResourceAnalytics,
         RealtimeAnalytics;
 
-    public ?int $propertyId = null;
+    public $propertyId = null;
 
-    public ?string $credentials = null;
+    public $credentials = null;
 
-    public GoogleAnalyticsService $googleAnalytics;
+    public $googleAnalytics;
 
     public function __construct()
     {
@@ -37,43 +37,43 @@ class Analytics
         $this->credentials = config('google-analytics.credentials') ?? null;
     }
 
-    public function setPropertyId(int $propertyId): self
+    public function setPropertyId($propertyId)
     {
         $this->propertyId = $propertyId;
 
         return $this;
     }
 
-    public function setCredentials(string $credentials): self
+    public function setCredentials($credentials)
     {
         $this->credentials = $credentials;
 
         return $this;
     }
 
-    public function getCredentials(): ?string
+    public function getCredentials()
     {
         return $this->credentials;
     }
 
-    public function getPropertyId(): ?int
+    public function getPropertyId()
     {
         return $this->propertyId;
     }
 
-    public function getClient(): BetaAnalyticsDataClient
+    public function getClient()
     {
         return new BetaAnalyticsDataClient([
             'credentials' => $this->getCredentials(),
         ]);
     }
 
-    public function getReport(GoogleAnalyticsService $googleAnalytics): AnalyticsResponse
+    public function getReport(GoogleAnalyticsService $googleAnalytics)
     {
         $client = $this->getClient();
 
         $response = $client->runReport([
-            'property' => 'properties/'.$this->getPropertyId(),
+            'property' => 'properties/' . $this->getPropertyId(),
             'dateRanges' => $googleAnalytics->dateRanges,
             'dimensions' => $googleAnalytics->dimensions,
             'metrics' => $googleAnalytics->metrics,

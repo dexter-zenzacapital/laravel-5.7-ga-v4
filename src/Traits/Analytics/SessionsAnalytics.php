@@ -3,7 +3,6 @@
 namespace Vormkracht10\Analytics\Traits\Analytics;
 
 use Illuminate\Support\Arr;
-use Vormkracht10\Analytics\Period;
 
 trait SessionsAnalytics
 {
@@ -11,7 +10,7 @@ trait SessionsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function sessions(Period $period): int
+    public function sessions($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -27,7 +26,7 @@ trait SessionsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function averageSessionDuration(Period $period): float
+    public function averageSessionDuration($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -43,7 +42,7 @@ trait SessionsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function averageSessionDurationByDate(Period $period): array
+    public function averageSessionDurationByDate($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -60,7 +59,7 @@ trait SessionsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function averageSessionDurationInSecondsByPage(Period $period): array
+    public function averageSessionDurationInSecondsByPage($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -75,7 +74,7 @@ trait SessionsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function averagePageViewsPerSession(Period $period): float
+    public function averagePageViewsPerSession($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -91,7 +90,7 @@ trait SessionsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function averagePageViewsPerSessionByDate(Period $period): array
+    public function averagePageViewsPerSessionByDate($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -108,7 +107,7 @@ trait SessionsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function averageSessionDurationInSeconds(Period $period): float
+    public function averageSessionDurationInSeconds($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -124,7 +123,7 @@ trait SessionsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function averageSessionDurationInSecondsByDate(Period $period): array
+    public function averageSessionDurationInSecondsByDate($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -141,7 +140,7 @@ trait SessionsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function bounceRate(Period $period): float
+    public function bounceRate($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -157,7 +156,7 @@ trait SessionsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function bounceRateByDate(Period $period): array
+    public function bounceRateByDate($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -174,7 +173,7 @@ trait SessionsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function bounceRateByPage(Period $period): array
+    public function bounceRateByPage($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)

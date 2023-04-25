@@ -6,27 +6,27 @@ use Google\Analytics\Data\V1beta\RunReportResponse;
 
 class AnalyticsResponse
 {
-    public RunReportResponse $response;
+    public $response;
 
-    public array $dataTable;
+    public $dataTable;
 
-    public array $metricAggregationsTable;
+    public $metricAggregationsTable;
 
-    public function setResponse(RunReportResponse $response): self
+    public function setResponse($response)
     {
         $this->response = $response;
 
         return $this;
     }
 
-    public function setDataTable(array $dataTable): self
+    public function setDataTable($dataTable)
     {
         $this->dataTable = $dataTable;
 
         return $this;
     }
 
-    public function setMetricAggregationsTable(array $metricAggregationsTable): self
+    public function setMetricAggregationsTable($metricAggregationsTable)
     {
         $this->metricAggregationsTable = $metricAggregationsTable;
 

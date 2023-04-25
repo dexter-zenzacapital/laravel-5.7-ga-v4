@@ -6,9 +6,9 @@ use Google\Analytics\Data\V1beta\Metric;
 
 trait MetricTrait
 {
-    public array $metrics = [];
+    public $metrics = [];
 
-    public function addMetric(string $name): self
+    public function addMetric($name)
     {
         $this->metrics[] = new Metric([
             'name' => $name,
@@ -17,7 +17,7 @@ trait MetricTrait
         return $this;
     }
 
-    public function addMetrics(string ...$metrics): self
+    public function addMetrics(...$metrics)
     {
         foreach ($metrics as $metric) {
             $this->addMetric($metric);

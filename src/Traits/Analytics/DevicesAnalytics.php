@@ -3,7 +3,6 @@
 namespace Vormkracht10\Analytics\Traits\Analytics;
 
 use Vormkracht10\Analytics\Enums\Direction;
-use Vormkracht10\Analytics\Period;
 
 trait DevicesAnalytics
 {
@@ -11,7 +10,7 @@ trait DevicesAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function topUsersByBrowser(Period $period, int $limit = 10): array
+    public function topUsersByBrowser($period, $limit = 10)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -28,7 +27,7 @@ trait DevicesAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalUsersByBrowser(Period $period): array
+    public function totalUsersByBrowser($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -43,7 +42,7 @@ trait DevicesAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function topUsersByOperatingSystem(Period $period, int $limit = 10): array
+    public function topUsersByOperatingSystem($period, $limit = 10)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -60,7 +59,7 @@ trait DevicesAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalUsersByOperatingSystem(Period $period): array
+    public function totalUsersByOperatingSystem($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -75,7 +74,7 @@ trait DevicesAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function topUsersByDeviceCategory(Period $period, int $limit = 10): array
+    public function topUsersByDeviceCategory($period, $limit = 10)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -92,7 +91,7 @@ trait DevicesAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalUsersByDeviceCategory(Period $period): array
+    public function totalUsersByDeviceCategory($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -107,7 +106,7 @@ trait DevicesAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function topUsersByMobileDeviceBranding(Period $period, int $limit = 10): array
+    public function topUsersByMobileDeviceBranding($period, $limit = 10)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -124,7 +123,7 @@ trait DevicesAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalUsersByMobileDeviceBranding(Period $period): array
+    public function totalUsersByMobileDeviceBranding($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -139,7 +138,7 @@ trait DevicesAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function topUsersByMobileDeviceModel(Period $period, int $limit = 10): array
+    public function topUsersByMobileDeviceModel($period, $limit = 10)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -156,7 +155,7 @@ trait DevicesAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalUsersByMobileDeviceModel(Period $period): array
+    public function totalUsersByMobileDeviceModel($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -171,7 +170,7 @@ trait DevicesAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function topUsersByMobileInputSelector(Period $period, int $limit = 10): array
+    public function topUsersByMobileInputSelector($period, $limit = 10)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -188,7 +187,7 @@ trait DevicesAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalUsersByMobileInputSelector(Period $period): array
+    public function totalUsersByMobileInputSelector($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -203,7 +202,7 @@ trait DevicesAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function topUsersByMobileDeviceInfo(Period $period, int $limit = 10): array
+    public function topUsersByMobileDeviceInfo($period, $limit = 10)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -220,7 +219,7 @@ trait DevicesAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalUsersByMobileDeviceInfo(Period $period): array
+    public function totalUsersByMobileDeviceInfo($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -235,7 +234,7 @@ trait DevicesAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function topUsersByMobileDeviceMarketingName(Period $period, int $limit = 10): array
+    public function topUsersByMobileDeviceMarketingName($period, $limit = 10)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -252,7 +251,7 @@ trait DevicesAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalUsersByMobileDeviceMarketingName(Period $period): array
+    public function totalUsersByMobileDeviceMarketingName($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -267,7 +266,7 @@ trait DevicesAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function topUsersByScreenResolution(Period $period, int $limit = 10): array
+    public function topUsersByScreenResolution($period, $limit = 10)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -284,7 +283,7 @@ trait DevicesAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalUsersByScreenResolution(Period $period): array
+    public function totalUsersByScreenResolution($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -299,7 +298,7 @@ trait DevicesAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function topUsersByPlatform(Period $period, int $limit = 10): array
+    public function topUsersByPlatform($period, $limit = 10)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -316,7 +315,7 @@ trait DevicesAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalUsersByPlatform(Period $period): array
+    public function totalUsersByPlatform($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)

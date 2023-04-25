@@ -9,9 +9,9 @@ use Vormkracht10\Analytics\Enums\Direction;
 
 trait OrderByTrait
 {
-    public array $orderBys = [];
+    public $orderBys = [];
 
-    public function orderByDimension(string $name, Direction $direction = Direction::ASC): self
+    public function orderByDimension($name, $direction = Direction::ASC)
     {
         $dimension = new DimensionOrderBy([
             'dimension_name' => $name,
@@ -26,7 +26,7 @@ trait OrderByTrait
         return $this;
     }
 
-    public function orderByMetric(string $name, Direction $direction = Direction::ASC): self
+    public function orderByMetric($name, $direction = Direction::ASC)
     {
         $metric = new MetricOrderBy([
             'metric_name' => $name,

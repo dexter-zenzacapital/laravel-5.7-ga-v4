@@ -3,13 +3,12 @@
 namespace Vormkracht10\Analytics\Traits\Google;
 
 use Google\Analytics\Data\V1beta\DateRange;
-use Vormkracht10\Analytics\Period;
 
 trait DateRangeTrait
 {
-    public array $dateRanges = [];
+    public $dateRanges = [];
 
-    public function setDateRange(Period $period): self
+    public function setDateRange($period)
     {
         $this->dateRanges = [
             new DateRange([
@@ -21,7 +20,7 @@ trait DateRangeTrait
         return $this;
     }
 
-    public function setDateRanges(Period ...$items): self
+    public function setDateRanges(...$items)
     {
         $this->dateRanges = [];
 

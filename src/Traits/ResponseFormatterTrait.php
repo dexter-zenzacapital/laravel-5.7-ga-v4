@@ -7,11 +7,11 @@ use Vormkracht10\Analytics\AnalyticsResponse;
 
 trait ResponseFormatterTrait
 {
-    public array $metricHeaders = [];
+    public $metricHeaders = [];
 
-    public array $dimensionHeaders = [];
+    public $dimensionHeaders = [];
 
-    public function formatResponse(RunReportResponse $response): AnalyticsResponse
+    public function formatResponse($response)
     {
         $this->setDimensionAndMetricHeaders($response);
 
@@ -21,7 +21,7 @@ trait ResponseFormatterTrait
             ->setMetricAggregationsTable($this->getMetricAggregationsTable($response));
     }
 
-    private function setDimensionAndMetricHeaders(RunReportResponse $response): void
+    private function setDimensionAndMetricHeaders($response)
     {
         foreach ($response->getDimensionHeaders() as $dimensionHeader) {
             $this->dimensionHeaders[] = $dimensionHeader->getName();
@@ -32,7 +32,7 @@ trait ResponseFormatterTrait
         }
     }
 
-    private function getTable(RunReportResponse $response): array
+    private function getTable($response)
     {
         $table = [];
 
@@ -53,7 +53,7 @@ trait ResponseFormatterTrait
         return $table;
     }
 
-    private function getMetricAggregationsTable(RunReportResponse $response): array
+    private function getMetricAggregationsTable($response)
     {
         $aggregationMethods = [
             'getTotals',

@@ -4,7 +4,6 @@ namespace Vormkracht10\Analytics\Traits\Analytics;
 
 use Illuminate\Support\Arr;
 use Vormkracht10\Analytics\Enums\Direction;
-use Vormkracht10\Analytics\Period;
 
 trait ViewsAnalytics
 {
@@ -12,7 +11,7 @@ trait ViewsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalViews(Period $period): int
+    public function totalViews($period)
     {
         $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews');
@@ -27,7 +26,7 @@ trait ViewsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalViewsByDate(Period $period): array
+    public function totalViewsByDate($period)
     {
         $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
@@ -43,7 +42,7 @@ trait ViewsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalViewsByPage(Period $period): array
+    public function totalViewsByPage($period)
     {
         $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
@@ -57,7 +56,7 @@ trait ViewsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function topViewsByPage(Period $period): array
+    public function topViewsByPage($period)
     {
         return $this->getViewsByPage($period, Direction::DESC);
     }
@@ -66,12 +65,12 @@ trait ViewsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function leastViewsByPage(Period $period): array
+    public function leastViewsByPage($period)
     {
         return $this->getViewsByPage($period, Direction::ASC);
     }
 
-    private function getViewsByPage(Period $period, Direction $direction): array
+    private function getViewsByPage($period, Direction $direction)
     {
         $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
@@ -86,7 +85,7 @@ trait ViewsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalViewsByPagePath(Period $period): array
+    public function totalViewsByPagePath($period)
     {
         $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
@@ -100,7 +99,7 @@ trait ViewsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function topViewsByPagePath(Period $period, int $limit = 10): array
+    public function topViewsByPagePath($period, int $limit = 10)
     {
         $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
@@ -116,7 +115,7 @@ trait ViewsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalViewsByPageTitle(Period $period): array
+    public function totalViewsByPageTitle($period)
     {
         $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
@@ -130,7 +129,7 @@ trait ViewsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function topViewsByPageTitle(Period $period, int $limit = 10): array
+    public function topViewsByPageTitle($period, int $limit = 10)
     {
         $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
@@ -146,7 +145,7 @@ trait ViewsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalViewsByPageUrl(Period $period): array
+    public function totalViewsByPageUrl($period)
     {
         $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
@@ -160,7 +159,7 @@ trait ViewsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function topViewsByPageUrl(Period $period, int $limit = 10): array
+    public function topViewsByPageUrl($period, int $limit = 10)
     {
         $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
@@ -176,7 +175,7 @@ trait ViewsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalViewsByCountry(Period $period): array
+    public function totalViewsByCountry($period)
     {
         $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
@@ -190,7 +189,7 @@ trait ViewsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function topViewsByCountry(Period $period, int $limit = 10): array
+    public function topViewsByCountry($period, int $limit = 10)
     {
         $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
@@ -206,7 +205,7 @@ trait ViewsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalViewsByCity(Period $period): array
+    public function totalViewsByCity($period)
     {
         $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')
@@ -220,7 +219,7 @@ trait ViewsAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function topViewsByCity(Period $period, int $limit = 10): array
+    public function topViewsByCity($period, int $limit = 10)
     {
         $googleAnalytics = $this->googleAnalytics->setDateRange($period)
             ->addMetrics('screenPageViews')

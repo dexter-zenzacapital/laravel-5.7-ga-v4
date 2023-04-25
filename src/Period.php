@@ -21,12 +21,12 @@ class Period
         $this->endDate = $endDate;
     }
 
-    public static function make($startDate, $endDate): self
+    public static function make($startDate, $endDate)
     {
         return new self($startDate, $endDate);
     }
 
-    public static function days(int $days): self
+    public static function days($days)
     {
         $endDate = Carbon::today();
         $startDate = Carbon::today()->subDays($days);
@@ -34,7 +34,7 @@ class Period
         return new self($startDate, $endDate);
     }
 
-    public static function weeks(int $weeks): self
+    public static function weeks($weeks)
     {
         $endDate = Carbon::today();
         $startDate = Carbon::today()->subWeeks($weeks)->startOfDay();
@@ -42,7 +42,7 @@ class Period
         return new self($startDate, $endDate);
     }
 
-    public static function months(int $months): self
+    public static function months($months)
     {
         $endDate = Carbon::today();
         $startDate = Carbon::today()->subMonths($months)->startOfDay();
@@ -50,7 +50,7 @@ class Period
         return new self($startDate, $endDate);
     }
 
-    public static function years(int $years): self
+    public static function years($years)
     {
         $endDate = Carbon::today();
         $startDate = Carbon::today()->subYears($years)->startOfDay();
@@ -58,12 +58,12 @@ class Period
         return new self($startDate, $endDate);
     }
 
-    public static function since($startDate): self
+    public static function since($startDate)
     {
         return new self($startDate, Carbon::today());
     }
 
-    public static function hours(int $hours): self
+    public static function hours($hours)
     {
         $endDate = Carbon::now();
         $startDate = Carbon::now()->subHours($hours);
@@ -71,7 +71,7 @@ class Period
         return new self($startDate, $endDate);
     }
 
-    public static function minutes(int $minutes): self
+    public static function minutes($minutes)
     {
         $endDate = Carbon::now();
         $startDate = Carbon::now()->subMinutes($minutes);

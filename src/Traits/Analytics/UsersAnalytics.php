@@ -3,7 +3,6 @@
 namespace Vormkracht10\Analytics\Traits\Analytics;
 
 use Illuminate\Support\Arr;
-use Vormkracht10\Analytics\Period;
 
 trait UsersAnalytics
 {
@@ -11,7 +10,7 @@ trait UsersAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalUsers(Period $period): int
+    public function totalUsers($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -27,7 +26,7 @@ trait UsersAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalUsersByDate(Period $period): array
+    public function totalUsersByDate($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -42,7 +41,7 @@ trait UsersAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalUsersBySessionSource(Period $period): array
+    public function totalUsersBySessionSource($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -57,7 +56,7 @@ trait UsersAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalUsersBySessionMedium(Period $period): array
+    public function totalUsersBySessionMedium($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -72,7 +71,7 @@ trait UsersAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalUsersBySessionDevice(Period $period): array
+    public function totalUsersBySessionDevice($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)

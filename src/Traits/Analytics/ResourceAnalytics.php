@@ -3,11 +3,10 @@
 namespace Vormkracht10\Analytics\Traits\Analytics;
 
 use Vormkracht10\Analytics\Enums\Direction;
-use Vormkracht10\Analytics\Period;
 
 trait ResourceAnalytics
 {
-    public function getTopReferrers(Period $period, int $limit): array
+    public function getTopReferrers($period, $limit)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -20,7 +19,7 @@ trait ResourceAnalytics
             ->dataTable;
     }
 
-    public function getLandingPages(Period $period, int $limit): array
+    public function getLandingPages($period, $limit)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -33,7 +32,7 @@ trait ResourceAnalytics
             ->dataTable;
     }
 
-    public function getTopTrafficSources(Period $period, int $limit): array
+    public function getTopTrafficSources($period, $limit)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -46,7 +45,7 @@ trait ResourceAnalytics
             ->dataTable;
     }
 
-    public function getTopBacklinks(Period $period, int $limit): array
+    public function getTopBacklinks($period, $limit)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -59,7 +58,7 @@ trait ResourceAnalytics
             ->dataTable;
     }
 
-    public function getTopSearches(Period $period, int $limit): array
+    public function getTopSearches($period, $limit)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)

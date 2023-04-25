@@ -11,7 +11,7 @@ trait DemographicAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function topUsersByLanguage(Period $period, int $limit = 10): array
+    public function topUsersByLanguage($period, $limit = 10)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -28,7 +28,7 @@ trait DemographicAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalUsersByLanguage(Period $period): array
+    public function totalUsersByLanguage($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -43,7 +43,7 @@ trait DemographicAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function topUsersByCountry(Period $period, int $limit = 10): array
+    public function topUsersByCountry($period, $limit = 10)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -60,7 +60,7 @@ trait DemographicAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalUsersByCountry(Period $period): array
+    public function totalUsersByCountry($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -75,7 +75,7 @@ trait DemographicAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function topUsersByCity(Period $period, int $limit = 10): array
+    public function topUsersByCity($period, $limit = 10)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -92,7 +92,7 @@ trait DemographicAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalUsersByCity(Period $period): array
+    public function totalUsersByCity($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -107,7 +107,7 @@ trait DemographicAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalUsersByGender(Period $period): array
+    public function totalUsersByGender($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)
@@ -123,7 +123,7 @@ trait DemographicAnalytics
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function totalUsersByAge(Period $period): array
+    public function totalUsersByAge($period)
     {
         $googleAnalytics = $this->googleAnalytics
             ->setDateRange($period)

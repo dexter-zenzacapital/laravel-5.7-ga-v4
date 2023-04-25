@@ -4,27 +4,27 @@ namespace Vormkracht10\Analytics\Traits\Google;
 
 trait RowConfigTrait
 {
-    public ?bool $keepEmptyRows = null;
+    public $keepEmptyRows = null;
 
-    public ?int $limit = null;
+    public $limit = null;
 
-    public ?int $offset = null;
+    public $offset = null;
 
-    public function keepEmptyRows(bool $keepEmptyRows = false): self
+    public function keepEmptyRows($keepEmptyRows = false)
     {
         $this->keepEmptyRows = $keepEmptyRows;
 
         return $this;
     }
 
-    public function limit(int $limit): self
+    public function limit($limit)
     {
         $this->limit = $limit;
 
         return $this;
     }
 
-    public function offset(int $offset): self
+    public function offset($offset)
     {
         $this->offset = $offset;
 

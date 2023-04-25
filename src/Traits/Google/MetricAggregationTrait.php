@@ -4,9 +4,9 @@ namespace Vormkracht10\Analytics\Traits\Google;
 
 trait MetricAggregationTrait
 {
-    public array $metricAggregations = [];
+    public $metricAggregations = [];
 
-    public function setMetricAggregation(int $value): self
+    public function setMetricAggregation($value)
     {
         $this->metricAggregations = [
             $value,
@@ -15,7 +15,7 @@ trait MetricAggregationTrait
         return $this;
     }
 
-    public function setMetricAggregations(int ...$values): self
+    public function setMetricAggregations(...$values)
     {
         $this->metricAggregations = $values;
 

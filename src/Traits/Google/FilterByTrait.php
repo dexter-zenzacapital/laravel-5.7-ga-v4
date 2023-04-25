@@ -13,11 +13,11 @@ use Google\Analytics\Data\V1beta\NumericValue;
 
 trait FilterByTrait
 {
-    public ?FilterExpression $dimensionFilter = null;
+    public $dimensionFilter = null;
 
-    public ?FilterExpression $metricFilter = null;
+    public $metricFilter = null;
 
-    public function whereDimension(string $field, int $matchType, int|string|float $value, bool $caseSensitive = false): self
+    public function whereDimension($field, $matchType, $value, $caseSensitive = false)
     {
         $string = new StringFilter([
             'match_type' => $matchType,
@@ -37,7 +37,7 @@ trait FilterByTrait
         return $this;
     }
 
-    public function whereDimensionIn(string $field, array $values, bool $caseSensitive = false): self
+    public function whereDimensionIn($field, array $values, $caseSensitive = false)
     {
         $inList = new InListFilter([
             'values' => $values,
@@ -56,7 +56,7 @@ trait FilterByTrait
         return $this;
     }
 
-    public function whereAndGroupDimensions(array $dimensions): self
+    public function whereAndGroupDimensions(array $dimensions)
     {
         $this->dimensionFilter = new FilterExpression([
             'and_group' => new FilterExpressionList([
@@ -67,7 +67,7 @@ trait FilterByTrait
         return $this;
     }
 
-    public function createDimensionGroup(array $dimensions): array
+    public function createDimensionGroup(array $dimensions)
     {
         $list = [];
 
@@ -91,7 +91,7 @@ trait FilterByTrait
         return $list;
     }
 
-    public function whereMetric(string $field, int $operation, int|string|float $value): self
+    public function whereMetric($field, $operation, $value)
     {
         $numeric = new NumericFilter([
             'operation' => $operation,
@@ -110,7 +110,7 @@ trait FilterByTrait
         return $this;
     }
 
-    public function whereMetricBetween(string $field, int|string|float $from, int|string|float $to): self
+    public function whereMetricBetween($field, $from, $to)
     {
         $between = new BetweenFilter([
             'from_value' => $this->getNumeric($from),
@@ -129,7 +129,7 @@ trait FilterByTrait
         return $this;
     }
 
-    private function getNumeric(int|string|float $value): NumericValue
+    private function getNumeric($value): NumericValue
     {
         $numeric = new NumericValue();
 
