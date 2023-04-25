@@ -7,11 +7,11 @@ use Vormkracht10\Analytics\Exceptions\InvalidPeriod;
 
 class Period
 {
-    public Carbon $startDate;
+    public $startDate;
 
-    public Carbon $endDate;
+    public $endDate;
 
-    final public function __construct(Carbon $startDate, Carbon $endDate)
+    final public function __construct($startDate, $endDate)
     {
         if ($startDate->greaterThan($endDate)) {
             throw InvalidPeriod::startDateCannotBeGreaterThanEndDate($startDate, $endDate);
@@ -21,7 +21,7 @@ class Period
         $this->endDate = $endDate;
     }
 
-    public static function make(Carbon $startDate, Carbon $endDate): self
+    public static function make($startDate, $endDate): self
     {
         return new self($startDate, $endDate);
     }
@@ -58,7 +58,7 @@ class Period
         return new self($startDate, $endDate);
     }
 
-    public static function since(Carbon $startDate): self
+    public static function since($startDate): self
     {
         return new self($startDate, Carbon::today());
     }
